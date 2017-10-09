@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+    mongodb_server: 'mongodb://127.0.0.1:27017'
+    mongodb_database: sonata
+    mongodb_username: admin
+    mongodb_password: Gamestream157

@@ -71,6 +71,29 @@ doctrine_migrations:
     table_name: migration_versions
     name: Application Migrations
 fos_user:
-    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    db_driver: mongodb # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: AppBundle\Entity\User
+    user_class: AppBundle\Document\Admin
+    
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+            
+doctrine_mongodb:
+    connections:
+        default:
+            server: "%mongodb_server%"
+            options:
+                username: "%mongodb_username%"
+                password: "%mongodb_password%"
+                db: "%mongodb_database%"
+    default_database: "%mongodb_database%"
+    hydrator_namespace:   Hydrators
+    hydrator_dir:         "%kernel.cache_dir%/doctrine/odm/mongodb/Hydrators"
+    document_managers:
+        default:
+            auto_mapping: true
