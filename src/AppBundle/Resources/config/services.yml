@@ -1,0 +1,10 @@
+## YAML Template.
+---
+services:
+    # ...
+    admin.bot:
+        class: AppBundle\Admin\BotAdmin
+        arguments: [~, AppBundle\Document\Bot, ~]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, label: Bot }
+        public: true

@@ -83,10 +83,26 @@ fos_user:
 sonata_block:
     default_contexts: [cms]
     blocks:
-
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+            
+sonata_admin:
+    templates:
+        dashboard: SonataAdminBundle:Core:dashboard.html.twig  
+        layout:   AppBundle:default:standard_layout.html.twig
+    dashboard:   
+           groups:
+            app.admin.group.bot:
+                label: app.admin.group.bot
+                label_catalogue: AppBundle
+                items:
+                    - admin.bot
+            app.admin.group.admin:
+                items: ~
+                item_adds:
+                roles: [ ROLE_ADMIN ]
+            app.admin.group.misc: ~
             
 doctrine_mongodb:
     connections:
