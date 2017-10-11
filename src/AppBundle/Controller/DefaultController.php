@@ -26,11 +26,15 @@ class DefaultController extends Controller
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
+         $csrfToken = $this->has('security.csrf.token_manager')
+            ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
+            : null;
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('AppBundle:default:login.html.twig', array(
                 'last_username' => $lastUsername,
                 'error'         => $error,
+                'csrf_token' => $csrfToken,
         ));
     }
 }
