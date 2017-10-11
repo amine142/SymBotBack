@@ -102,3 +102,7 @@ doctrine_mongodb:
     document_managers:
         default:
             auto_mapping: true
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'

@@ -66,7 +66,8 @@ class AdminType extends AbstractType
         ));
     }
 
-    public function getName() {
+    public function getName() 
+    {
         return 'register_admin';
     }
 

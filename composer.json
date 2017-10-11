@@ -37,7 +37,8 @@
         "doctrine/mongodb-odm": "^1.0",
         "doctrine/mongodb-odm-bundle": "^3.0",
         "alcaeus/mongo-php-adapter": "^1.1",
-        "sonata-project/doctrine-mongodb-admin-bundle": "*"
+        "sonata-project/doctrine-mongodb-admin-bundle": "*",
+        "symfony/assetic-bundle": "^2.8"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
